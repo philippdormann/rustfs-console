@@ -162,27 +162,27 @@ function BrowserBucketsPage() {
     },
   ]
 
-    baseColumns.push(
-      {
-        header: () => t("Object Count"),
-        accessorKey: "Count",
-        cell: ({ row }) =>
-          typeof row.original.Count === "number" ? (
-            row.original.Count.toLocaleString()
-          ) : usageLoading ? (
-            <Spinner className="size-3 text-muted-foreground" />
-          ) : (
-            "--"
-          ),
-      },
-      {
-        header: () => t("Size"),
-        accessorKey: "Size",
-        cell: ({ row }) =>
-          row.original.Size ?? (usageLoading ? <Spinner className="size-3 text-muted-foreground" /> : "--"),
-      },
-    )
-  
+  baseColumns.push(
+    {
+      header: () => t("Object Count"),
+      accessorKey: "Count",
+      cell: ({ row }) =>
+        typeof row.original.Count === "number" ? (
+          row.original.Count.toLocaleString()
+        ) : usageLoading ? (
+          <Spinner className="size-3 text-muted-foreground" />
+        ) : (
+          "--"
+        ),
+    },
+    {
+      header: () => t("Size"),
+      accessorKey: "Size",
+      cell: ({ row }) =>
+        row.original.Size ?? (usageLoading ? <Spinner className="size-3 text-muted-foreground" /> : "--"),
+    },
+  )
+
   baseColumns.push({
     id: "actions",
     header: () => t("Actions"),

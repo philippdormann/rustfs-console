@@ -47,6 +47,7 @@ export function ReplicationNewForm({ open, onOpenChange, bucketName, onSuccess }
   const [tags, setTags] = useState<Tag[]>([{ key: "", value: "" }])
   const [existingObject, setExistingObject] = useState(true)
   const [expiredDeleteMark, setExpiredDeleteMark] = useState(true)
+  const [replicateDelete, setReplicateDelete] = useState(true)
   const [submitting, setSubmitting] = useState(false)
 
   const modeOptions = useMemo(
@@ -83,6 +84,7 @@ export function ReplicationNewForm({ open, onOpenChange, bucketName, onSuccess }
     setTags([{ key: "", value: "" }])
     setExistingObject(true)
     setExpiredDeleteMark(true)
+    setReplicateDelete(true)
   }, [])
 
   useEffect(() => {
@@ -191,6 +193,9 @@ export function ReplicationNewForm({ open, onOpenChange, bucketName, onSuccess }
         DeleteMarkerReplication: {
           Status: expiredDeleteMark ? "Enabled" : "Disabled",
         },
+        DeleteReplication: {
+          Status: replicateDelete ? "Enabled" : "Disabled",
+        },
         Destination: {
           Bucket: targetResponse,
           StorageClass: storageType || "STANDARD",
@@ -253,18 +258,18 @@ export function ReplicationNewForm({ open, onOpenChange, bucketName, onSuccess }
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="sm:max-w-2xl"
+        className="flex max-h-[90vh] flex-col gap-4 sm:max-w-2xl"
         onPointerDownOutside={(e) => e.preventDefault()}
         onInteractOutside={(e) => e.preventDefault()}
         onEscapeKeyDown={(e) => e.preventDefault()}
       >
-        <DialogHeader>
+        <DialogHeader className="shrink-0">
           <DialogTitle>
             {t("Add Replication Rule")} ({t("Bucket")}: {bucketName || ""})
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6">
+        <div className="min-h-0 flex-1 space-y-6 overflow-y-auto pr-1">
           <div className="space-y-4">
             <div className="grid gap-3 md:grid-cols-2">
               <Field>
@@ -445,6 +450,14 @@ export function ReplicationNewForm({ open, onOpenChange, bucketName, onSuccess }
               <Switch checked={expiredDeleteMark} onCheckedChange={setExpiredDeleteMark} />
             </div>
 
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium">{t("Replicate Delete")}</p>
+                <p className="text-xs text-muted-foreground">{t("Sync delete to destination bucket.")}</p>
+              </div>
+              <Switch checked={replicateDelete} onCheckedChange={setReplicateDelete} />
+            </div>
+
             {modeType === "async" && (
               <div className="space-y-3">
                 <Field>
@@ -490,7 +503,7 @@ export function ReplicationNewForm({ open, onOpenChange, bucketName, onSuccess }
           </div>
         </div>
 
-        <DialogFooter>
+        <DialogFooter className="shrink-0">
           <Button variant="outline" onClick={handleCancel}>
             {t("Cancel")}
           </Button>

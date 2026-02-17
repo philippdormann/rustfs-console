@@ -32,49 +32,49 @@ export default function BucketSettingsPage() {
       </PageHeader>
 
       <Tabs defaultValue="overview" className="w-full space-y-6">
-        <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
-          <TabsTrigger value="overview" className="px-4">
-            {t("Overview")}
-          </TabsTrigger>
-          {canViewLifecycle && (
-            <TabsTrigger value="lifecycle" className="px-4">
-              {t("Lifecycle")}
+          <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
+            <TabsTrigger value="overview" className="px-4">
+              {t("Overview")}
             </TabsTrigger>
-          )}
-          {canViewReplication && (
-            <TabsTrigger value="replication" className="px-4">
-              {t("Replication")}
-            </TabsTrigger>
-          )}
-          {canViewEvents && (
-            <TabsTrigger value="events" className="px-4">
-              {t("Events")}
-            </TabsTrigger>
-          )}
-        </TabsList>
+            {canViewLifecycle && (
+              <TabsTrigger value="lifecycle" className="px-4">
+                {t("Lifecycle")}
+              </TabsTrigger>
+            )}
+            {canViewReplication && (
+              <TabsTrigger value="replication" className="px-4">
+                {t("Replication")}
+              </TabsTrigger>
+            )}
+            {canViewEvents && (
+              <TabsTrigger value="events" className="px-4">
+                {t("Events")}
+              </TabsTrigger>
+            )}
+          </TabsList>
 
-        <TabsContent value="overview" className="space-y-4 outline-none">
+          <TabsContent value="overview" className="space-y-4 outline-none">
           {bucketName ? <BucketInfo bucketName={bucketName} /> : null}
-        </TabsContent>
+          </TabsContent>
 
-        {canViewLifecycle && (
-          <TabsContent value="lifecycle" className="space-y-4 outline-none">
+          {canViewLifecycle && (
+            <TabsContent value="lifecycle" className="space-y-4 outline-none">
             {bucketName ? <BucketLifecycleTab bucketName={bucketName} /> : null}
-          </TabsContent>
-        )}
+            </TabsContent>
+          )}
 
-        {canViewReplication && (
-          <TabsContent value="replication" className="space-y-4 outline-none">
+          {canViewReplication && (
+            <TabsContent value="replication" className="space-y-4 outline-none">
             {bucketName ? <BucketReplicationTab bucketName={bucketName} /> : null}
-          </TabsContent>
-        )}
+            </TabsContent>
+          )}
 
-        {canViewEvents && (
-          <TabsContent value="events" className="space-y-4 outline-none">
+          {canViewEvents && (
+            <TabsContent value="events" className="space-y-4 outline-none">
             {bucketName ? <BucketEventsTab bucketName={bucketName} /> : null}
-          </TabsContent>
-        )}
-      </Tabs>
+            </TabsContent>
+          )}
+        </Tabs>
     </Page>
   )
 }
