@@ -29,6 +29,7 @@ interface BucketRow {
   CreationDate: string
   Count?: number
   Size?: string
+  SizeBytes?: number
 }
 
 type BucketUsageMap = Record<string, { objects_count?: number; size?: number } | undefined>
@@ -70,6 +71,7 @@ function BrowserBucketsPage() {
               ...row,
               Count: objectsCount,
               Size: niceBytes(String(totalSize)),
+              SizeBytes: totalSize,
             }
           }),
         )
@@ -177,7 +179,9 @@ function BrowserBucketsPage() {
     },
     {
       header: () => t("Size"),
-      accessorKey: "Size",
+      id: "SizeBytes",
+      // use numeric bytes for sorting via accessorFn, but display the formatted string
+      accessorFn: (row) => (typeof row.SizeBytes === "number" ? row.SizeBytes : undefined),
       cell: ({ row }) =>
         row.original.Size ?? (usageLoading ? <Spinner className="size-3 text-muted-foreground" /> : "--"),
     },
