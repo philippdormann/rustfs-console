@@ -546,12 +546,12 @@ export function ObjectList({
 
       <div className="flex justify-end gap-2">
         <Button variant="outline" disabled={tokenHistory.length === 0} onClick={goToPreviousPage}>
-          <RiArrowLeftSLine className="mr-2 size-4" />
+          <RiArrowLeftSLine className="me-2 size-4 rtl:-scale-x-100" />
           <span>{t("Previous Page")}</span>
         </Button>
         <Button variant="outline" disabled={!nextToken} onClick={goToNextPage}>
           <span>{t("Next Page")}</span>
-          <RiArrowRightSLine className="ml-2 size-4" />
+          <RiArrowRightSLine className="ms-2 size-4 rtl:-scale-x-100" />
         </Button>
       </div>
 

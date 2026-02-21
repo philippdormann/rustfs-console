@@ -44,7 +44,7 @@ A modern, responsive web management console for RustFS distributed file system, 
 
 ### Other Tools
 
-- **[i18next](https://www.i18next.com/)** - Internationalization support (12 languages)
+- **[i18next](https://www.i18next.com/)** - Internationalization support (13 languages)
 - **[Recharts](https://recharts.org/)** - Chart visualization
 - **[Sonner](https://sonner.emilkowal.ski/)** - Toast notifications
 - **[date-fns](https://date-fns.org/)** / **[dayjs](https://day.js.org/)** - Date handling
@@ -65,7 +65,7 @@ console/
 │   └── feedback/          # Global feedback APIs (toast, dialog)
 ├── types/                 # TypeScript type definitions
 ├── i18n/                  # Internationalization resource files
-│   └── locales/          # Multi-language files (12 languages)
+│   └── locales/          # Multi-language files (13 languages)
 ├── config/                # Configuration files
 ├── public/                # Static assets
 └── tests/                 # Test files (mirror source structure)
@@ -192,6 +192,7 @@ When tests are configured:
 
 The project supports multiple languages. Currently supported languages:
 
+- العربية (AR-MA)
 - 中文（简体）(Chinese Simplified)
 - English (US)
 - Deutsch (DE)

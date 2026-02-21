@@ -254,7 +254,7 @@ export function SiteReplicationNewForm({ open, onOpenChange, onSuccess }: SiteRe
                         type="button"
                         size="icon"
                         variant="ghost"
-                        className="-mr-2 h-8 w-8"
+                        className="-me-2 h-8 w-8"
                         aria-label={t("Delete")}
                         onClick={() => removeRemoteSite(index)}
                       >

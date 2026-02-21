@@ -8,6 +8,7 @@ import { LOCALE_CODES, type Locale } from "@/lib/i18n"
 
 const languageConfig: Record<string, { text: string; icon: typeof RiTranslate2 }> = {
   en: { text: "English", icon: RiTranslate2 },
+  ar: { text: "العربية", icon: RiTranslate2 },
   zh: { text: "中文", icon: RiTranslate2 },
   fr: { text: "Français", icon: RiTranslate2 },
   tr: { text: "Türkçe", icon: RiTranslate2 },

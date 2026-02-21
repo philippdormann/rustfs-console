@@ -162,7 +162,7 @@ export default function PerformancePage() {
         <PageHeader
           actions={
             <Button variant="outline" onClick={refetch}>
-              <RiRefreshLine className="mr-2 size-4" aria-hidden />
+              <RiRefreshLine className="me-2 size-4" aria-hidden />
               {t("Sync")}
             </Button>
           }
@@ -181,7 +181,7 @@ export default function PerformancePage() {
       <PageHeader
         actions={
           <Button variant="outline" onClick={refetch} disabled={loading}>
-            <RiRefreshLine className="mr-2 size-4" aria-hidden />
+            <RiRefreshLine className="me-2 size-4" aria-hidden />
             {t("Sync")}
           </Button>
         }

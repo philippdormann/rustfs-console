@@ -7,6 +7,7 @@ import LanguageDetector from "i18next-browser-languagedetector"
 // Map short locale codes (from Nuxt i18n_redirected) to locale file names
 const LOCALE_FILE_MAP: Record<string, string> = {
   en: "en-US",
+  ar: "ar-MA",
   zh: "zh-CN",
   ja: "ja-JP",
   ko: "ko-KR",
@@ -22,6 +23,7 @@ const LOCALE_FILE_MAP: Record<string, string> = {
 
 export type Locale = keyof typeof LOCALE_FILE_MAP
 export const LOCALE_CODES: Locale[] = Object.keys(LOCALE_FILE_MAP) as Locale[]
+export const RTL_LOCALES = new Set(["ar"])
 
 const loadLocale = async (file: string) => {
   const mod = await import(`@/i18n/locales/${file}.json`)

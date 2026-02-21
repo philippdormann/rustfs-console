@@ -34,7 +34,7 @@ export function ThemeSwitcher() {
       <DropdownMenuContent className="w-40" align="start">
         {themeOptions.map(({ labelKey, key, Icon: OptionIcon }) => (
           <DropdownMenuItem key={key} onSelect={() => setTheme(key)}>
-            <OptionIcon className="mr-2 h-4 w-4" />
+            <OptionIcon className="me-2 h-4 w-4" />
             {t(labelKey)}
           </DropdownMenuItem>
         ))}

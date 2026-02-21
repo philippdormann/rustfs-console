@@ -170,7 +170,7 @@ export function UserGroupPolicies({ group, onSearch }: UserGroupPoliciesProps) {
                           >
                             <RiCheckLine
                               className={cn(
-                                "mr-2 size-4",
+                                "me-2 size-4",
                                 selectedPolicies.includes(option.value) ? "opacity-100" : "opacity-0",
                               )}
                             />

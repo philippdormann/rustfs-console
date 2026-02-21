@@ -80,7 +80,7 @@ export function ObjectPreviewModal({ show, onShowChange, object }: ObjectPreview
     <Dialog open={show} onOpenChange={onShowChange}>
       <DialogContent className="sm:max-w-4xl max-h-[85vh] overflow-auto z-[1000]">
         <DialogHeader>
-          <DialogTitle className="flex items-start justify-between mr-6">{t("Preview")}</DialogTitle>
+          <DialogTitle className="flex items-start justify-between me-6">{t("Preview")}</DialogTitle>
         </DialogHeader>
         <div className="min-h-[300px] rounded-md border p-4 flex flex-col">
           {loading ? (
@@ -97,7 +97,7 @@ export function ObjectPreviewModal({ show, onShowChange, object }: ObjectPreview
               {isText && (
                 <pre className="max-h-[70vh] relative overflow-auto whitespace-pre-wrap break-words">
                   {getFormattedContent()}
-                  <div className="absolute right-0 top-0">
+                  <div className="absolute end-0 top-0">
                     {isJson && (
                       <div className="flex justify-end">
                         <Button variant="outline" size="sm" onClick={() => setIsFormatted(!isFormatted)}>

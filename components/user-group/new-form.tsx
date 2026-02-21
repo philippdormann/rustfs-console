@@ -84,7 +84,7 @@ export function UserGroupNewForm({ open, onOpenChange, onSuccess }: UserGroupNew
             {t("Cancel")}
           </Button>
           <Button onClick={submitForm} disabled={submitting}>
-            {submitting && <Spinner className="mr-2 size-4" />}
+            {submitting && <Spinner className="me-2 size-4" />}
             {t("Submit")}
           </Button>
         </DialogFooter>

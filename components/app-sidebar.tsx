@@ -30,6 +30,7 @@ import logoImage from "@/assets/logo.svg"
 import type { NavItem } from "@/types/app-config"
 import { usePermissions } from "@/hooks/use-permissions"
 import { SidebarVersion } from "@/components/sidebars/version"
+import { useDirection } from "@/components/ui/direction"
 
 const APP_NAME = "RustFS"
 
@@ -60,6 +61,7 @@ export function AppSidebar() {
   const pathname = usePathname()
   const { state } = useSidebar()
   const isCollapsed = state === "collapsed"
+  const dir = useDirection()
   const brandInitial = APP_NAME.charAt(0).toUpperCase() ?? "R"
 
   const { isAdmin, canAccessPath } = usePermissions()
@@ -118,7 +120,11 @@ export function AppSidebar() {
   const getLabel = (item: NavItem) => t(item.label)
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar
+      collapsible="icon"
+      side={dir === "rtl" ? "right" : "left"}
+      className="**:data-[sidebar=menu-button]:text-start! **:data-[sidebar=menu-sub-button]:text-start!"
+    >
       <SidebarHeader>
         <Link href="/" className="flex items-center gap-3">
           {isCollapsed ? (
@@ -134,7 +140,7 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
-        <ScrollArea className="flex-1 pr-1">
+        <ScrollArea className="flex-1 pe-1">
           <div className="flex flex-col gap-4">
             {navGroups.map((group, groupIndex) => (
               <SidebarGroup key={groupIndex} className="gap-4 py-0">
@@ -161,7 +167,7 @@ export function AppSidebar() {
                               </SidebarMenuButton>
                             </CollapsibleTrigger>
                             <CollapsibleContent>
-                              <SidebarMenuSub>
+                              <SidebarMenuSub className="border-l-0 border-s rtl:-translate-x-px">
                                 {item.children!.map((child) => (
                                   <SidebarMenuSubItem key={child.label}>
                                     {isExternal(child) ? (
@@ -174,7 +180,7 @@ export function AppSidebar() {
                                         >
                                           <NavIcon name={child.icon} />
                                           <span className="truncate">{getLabel(child)}</span>
-                                          <RiExternalLinkLine className="ml-auto size-3 text-muted-foreground" />
+                                          <RiExternalLinkLine className="ms-auto size-3 text-muted-foreground" />
                                         </a>
                                       </SidebarMenuSubButton>
                                     ) : (

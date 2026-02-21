@@ -200,7 +200,7 @@ export function UserNewForm({ open, onOpenChange, onSuccess }: UserNewFormProps)
                             onSelect={() => toggleGroup(option.value)}
                           >
                             <RiCheckLine
-                              className={cn("mr-2 size-4", groups.includes(option.value) ? "opacity-100" : "opacity-0")}
+                              className={cn("me-2 size-4", groups.includes(option.value) ? "opacity-100" : "opacity-0")}
                             />
                             <span>{option.label}</span>
                           </CommandItem>
@@ -253,7 +253,7 @@ export function UserNewForm({ open, onOpenChange, onSuccess }: UserNewFormProps)
                           >
                             <RiCheckLine
                               className={cn(
-                                "mr-2 size-4",
+                                "me-2 size-4",
                                 policies.includes(option.value) ? "opacity-100" : "opacity-0",
                               )}
                             />

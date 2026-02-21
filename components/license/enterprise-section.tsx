@@ -246,11 +246,11 @@ export function LicenseEnterpriseSection() {
 
               <div className="flex flex-wrap items-center gap-3">
                 <Button variant="default" onClick={updateLicense}>
-                  <RiUploadFill className="mr-2 size-4" aria-hidden />
+                  <RiUploadFill className="me-2 size-4" aria-hidden />
                   {t("Update License")}
                 </Button>
                 <Button variant="outline" onClick={contactSupport}>
-                  <RiCustomerService2Line className="mr-2 size-4" aria-hidden />
+                  <RiCustomerService2Line className="me-2 size-4" aria-hidden />
                   {t("Contact Support")}
                 </Button>
               </div>

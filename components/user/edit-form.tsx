@@ -115,7 +115,7 @@ export function UserEditForm({ open, onOpenChange, row, onSuccess }: UserEditFor
           <div className="flex items-center justify-start gap-2 rounded-md border px-3 py-2">
             <span className="text-sm text-muted-foreground">{t("Status")}</span>
             <Switch checked={statusBoolean} onCheckedChange={handleStatusChange} disabled={loading} />
-            <Button variant="outline" className="ml-auto" disabled>
+            <Button variant="outline" className="ms-auto" disabled>
               {t("Change Secret Key")} (Coming soon)
             </Button>
           </div>

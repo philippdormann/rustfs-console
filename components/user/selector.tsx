@@ -82,7 +82,7 @@ export function UserSelector({
                   {users.map((option) => (
                     <CommandItem key={option.value} value={option.label} onSelect={() => toggleUser(option.value)}>
                       <RiCheckLine
-                        className={cn("mr-2 size-4", value.includes(option.value) ? "opacity-100" : "opacity-0")}
+                        className={cn("me-2 size-4", value.includes(option.value) ? "opacity-100" : "opacity-0")}
                       />
                       <span>{option.label}</span>
                     </CommandItem>

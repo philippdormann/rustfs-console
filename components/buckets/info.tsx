@@ -446,7 +446,7 @@ export function BucketInfo({ bucketName }: BucketInfoProps) {
             <ItemTitle>{t("Access Policy")}</ItemTitle>
             <ItemActions>
               <Button variant="outline" size="sm" className="shrink-0" onClick={openPolicyModal}>
-                <RiEdit2Line className="mr-2 size-4" />
+                <RiEdit2Line className="me-2 size-4" />
                 {t("Edit")}
               </Button>
             </ItemActions>
@@ -465,7 +465,7 @@ export function BucketInfo({ bucketName }: BucketInfoProps) {
             </div>
             <ItemActions>
               <Button variant="outline" size="sm" className="shrink-0" onClick={openEncryptModal}>
-                <RiEdit2Line className="mr-2 size-4" />
+                <RiEdit2Line className="me-2 size-4" />
                 {t("Edit")}
               </Button>
             </ItemActions>
@@ -478,7 +478,7 @@ export function BucketInfo({ bucketName }: BucketInfoProps) {
             <ItemTitle>{t("Tag")}</ItemTitle>
             <ItemActions>
               <Button variant="outline" size="sm" className="shrink-0" onClick={() => openTagModal()}>
-                <RiAddLine className="mr-2 size-4" />
+                <RiAddLine className="me-2 size-4" />
                 {t("Add")}
               </Button>
             </ItemActions>
